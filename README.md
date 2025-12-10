@@ -55,8 +55,8 @@ Para ejecutar el sistema completo, sigue estos pasos:
 Restaura la base de datos `Biblioteca` en tu servidor SQL local. Asegúrate de que existan las tablas `Libro`, `Editorial` y `Pais` junto con sus procedimientos almacenados (`sp_Listar...`, `sp_Insertar...`, etc.).
 
 ### 2. Configuración
-* **API:** Verifica que la cadena de conexión en `app_CoreApi_04/appsettings.json` apunte a tu servidor local.
-* **Cliente:** El cliente web está preconfigurado para buscar la API en `http://localhost:5030`.
+* **API:** Verifica que la cadena de conexión en `EXAMEN_T2/appsettings.json` apunte a tu servidor local.
+* **Cliente:** El cliente web está preconfigurado para buscar la API en `http://localhost:7270`.
 
 ### 3. Ejecución
 Ambos proyectos deben correr al mismo tiempo para que el sistema funcione.
@@ -64,7 +64,7 @@ Ambos proyectos deben correr al mismo tiempo para que el sistema funcione.
 **Opción Recomendada (Visual Studio):**
 1.  Abre la solución.
 2.  Configura **Proyectos de inicio múltiples** en las propiedades de la solución.
-3.  Establecer acción **"Iniciar"** tanto para `app_CoreApi_04` como para `ExamenT2_Cliente`.
+3.  Establecer acción **"Iniciar"** tanto para `EXAMEN_T2` como para `ExamenT2_Cliente`.
 4.  Presiona **F5**.
 
 ---
