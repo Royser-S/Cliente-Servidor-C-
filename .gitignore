@@ -1,0 +1,16 @@
+## Ignorar carpetas de compilación
+[Bb]in/
+[Oo]bj/
+
+## Ignorar archivos de configuración de usuario de Visual Studio
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+
+## Ignorar archivos temporales
+*.log
+*.tmp
+
+## Ignorar configuraciones sensibles (Opcional, pero recomendado)
+# appsettings.Development.json

@@ -1,0 +1,58 @@
+﻿@model ExamenT2_Cliente.Models.Editorial
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Editorial</h4>
+
+@if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-danger">@ViewBag.Mensaje</div>
+}
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div class="form-group mb-3">
+                <label asp-for="CodigoEditorial" class="control-label"></label>
+                <input asp-for="CodigoEditorial" class="form-control" readonly />
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="NombreEditorial" class="control-label"></label>
+                <input asp-for="NombreEditorial" class="form-control" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Direccion" class="control-label"></label>
+                <input asp-for="Direccion" class="form-control" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="CodigoPais" class="control-label"></label>
+                <select asp-for="CodigoPais" class="form-control" asp-items="ViewBag.Paises"></select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Actualizar" class="btn btn-warning" />
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

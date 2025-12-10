@@ -1,0 +1,72 @@
+﻿@model ExamenT2_Cliente.Models.Editorial
+
+@{
+    ViewData["Title"] = "Detalles de Editorial";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0"><i class="bi bi-info-circle"></i> Información de la Editorial</h3>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.CodigoEditorial)
+                        </dt>
+                        <dd class="col-sm-8 fw-bold text-primary">
+                            @Html.DisplayFor(model => model.CodigoEditorial)
+                        </dd>
+
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.NombreEditorial)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.NombreEditorial)
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Direccion)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Direccion)
+                        </dd>
+
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Email)
+                        </dt>
+                        <dd class="col-sm-8">
+                            <a href="mailto:@Model.Email">@Html.DisplayFor(model => model.Email)</a>
+                        </dd>
+
+                        <dt class="col-sm-4">
+                            País
+                        </dt>
+                        <dd class="col-sm-8">
+                            <span class="badge bg-info text-dark">
+                                @Html.DisplayFor(model => model.NombrePais)
+                            </span>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer text-end">
+            <a asp-action="Edit" asp-route-id="@Model.CodigoEditorial" class="btn btn-warning">
+                Editar
+            </a>
+            <a asp-action="Index" class="btn btn-secondary">
+                Volver a la Lista
+            </a>
+        </div>
+    </div>
+</div>

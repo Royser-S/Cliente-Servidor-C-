@@ -1,0 +1,63 @@
+﻿@model ExamenT2_Cliente.Models.Libro
+
+@{
+    ViewData["Title"] = "Editar Libro";
+}
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-warning">
+            <h3 class="mb-0 text-dark">Editar Libro</h3>
+        </div>
+        <div class="card-body">
+
+            @if (ViewBag.Mensaje != null)
+            {
+                <div class="alert alert-danger">@ViewBag.Mensaje</div>
+            }
+
+            <form asp-action="Edit">
+                <div class="row">
+                    <div class="col-md-6 form-group mb-3">
+                        <label asp-for="CodigoLibro" class="control-label fw-bold"></label>
+                        <input asp-for="CodigoLibro" class="form-control bg-light" readonly />
+                    </div>
+
+                    <div class="col-md-6 form-group mb-3">
+                        <label asp-for="TituloLibro" class="control-label fw-bold"></label>
+                        <input asp-for="TituloLibro" class="form-control" />
+                        <span asp-validation-for="TituloLibro" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6 form-group mb-3">
+                        <label asp-for="Autor" class="control-label fw-bold"></label>
+                        <input asp-for="Autor" class="form-control" />
+                        <span asp-validation-for="Autor" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6 form-group mb-3">
+                        <label asp-for="Genero" class="control-label fw-bold"></label>
+                        <input asp-for="Genero" class="form-control" />
+                    </div>
+
+                    <div class="col-md-12 form-group mb-3">
+                        <label asp-for="CodigoEditorial" class="control-label fw-bold"></label>
+                        <select asp-for="CodigoEditorial" class="form-select" asp-items="ViewBag.Editoriales"></select>
+                    </div>
+                </div>
+
+                <hr />
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a asp-action="Index" class="btn btn-secondary me-md-2">Cancelar</a>
+                    <button type="submit" class="btn btn-warning px-5">Actualizar Datos</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

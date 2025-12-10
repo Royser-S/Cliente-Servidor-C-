@@ -1,0 +1,32 @@
+﻿@model ExamenT2_Cliente.Models.Libro
+
+@{
+    ViewData["Title"] = "Eliminar Libro";
+}
+
+<div class="container mt-4">
+    <div class="alert alert-danger shadow-sm">
+        <h3 class="alert-heading"><i class="bi bi-exclamation-triangle"></i> ¿Está seguro?</h3>
+        <p>Está a punto de eliminar el siguiente libro de forma permanente:</p>
+    </div>
+
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Código</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.CodigoLibro)</dd>
+
+                <dt class="col-sm-3">Título</dt>
+                <dd class="col-sm-9 fw-bold">@Html.DisplayFor(model => model.TituloLibro)</dd>
+
+                <dt class="col-sm-3">Autor</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Autor)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <form asp-action="Delete" asp-route-id="@Model.CodigoLibro">
+        <button type="submit" class="btn btn-danger btn-lg">Sí, Eliminar Libro</button>
+        <a asp-action="Index" class="btn btn-secondary btn-lg">No, Cancelar</a>
+    </form>
+</div>
