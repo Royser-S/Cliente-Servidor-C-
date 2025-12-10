@@ -75,7 +75,7 @@ El repositorio está organizado de la siguiente manera:
 ```text
 ExamenT2_Completo/
 │
-├── 📁 app_CoreApi_04/         # PROYECTO BACKEND (Web API)
+├── 📁 EXAMEN_T2/         # PROYECTO BACKEND (Web API)
 │   ├── Controllers/           # Endpoints (Libro, Editorial)
 │   ├── Repositorio/           # DAO y Lógica de Datos
 │   ├── appsettings.json       # Cadena de Conexión
